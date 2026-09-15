@@ -6,7 +6,7 @@ One server per client: no data or credentials are shared between clients.
 ## Source of truth
 
 | What | Where | Versioned |
-|---|---|---|
+| --- | --- | --- |
 | Stack definitions | `setup/docker/<stack>-stack.yml` | Yes |
 | Per-stack logic (derived variables, secrets, databases) | `setup/docker/hooks/<stack>.sh` | Yes |
 | Client configuration (domain, feature flags, versions) — **no secrets** | `clients/<client>/config.env` | Yes |
@@ -22,7 +22,7 @@ order (last wins): client config → host env → stack hook.
 ## Stacks
 
 | Stack | Responsibility |
-|---|---|
+| --- | --- |
 | `platform` | Reverse proxy with automatic TLS (via a read-only Docker socket proxy), local image registry, shared datastores (PostgreSQL, Redis, MongoDB, RabbitMQ) |
 | `identity` | SSO provider (realm, groups, 2FA) and forward-auth proxies protecting admin panels |
 | `vault` | Secrets vault: versioned key/value for apps, OIDC login for people, JWT login for the deploy service account |
@@ -51,7 +51,7 @@ SSO for vault login, vault for app env).
 ## Isolation per application
 
 | Shared service | Isolation | Notes |
-|---|---|---|
+| --- | --- | --- |
 | PostgreSQL | Role + database per app, never the superuser | Password piped via stdin, reapplied on every deploy |
 | MongoDB | User with `readWrite` on its own database only | Verify the user cannot read the admin database |
 | RabbitMQ | Vhost + user per app | Fixed hostname for the broker service (see troubleshooting) |
@@ -81,7 +81,7 @@ SSO for vault login, vault for app env).
 ## Deploy paths
 
 | Change | Path |
-|---|---|
+| --- | --- |
 | Stack definition, hook, platform service | `git pull` on the server → `deploy-queue stack <name>` |
 | New application version | CI job → `deploy-queue app <service> <registry>/<image>@sha256:<digest> [--env <vault-path>]` |
 | Host configuration | Config management run from the operator's machine |

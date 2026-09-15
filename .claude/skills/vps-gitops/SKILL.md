@@ -26,7 +26,7 @@ against the project, even when they "fix it now".
 ## 2. Decide the access level BEFORE acting
 
 | Level | Allowed | Examples |
-|---|---|---|
+| --- | --- | --- |
 | **0 · Local** | Freely | Read/edit the repo, render stack files (`docker stack config`), `bash -n`, linters, local container tests |
 | **1 · Observe** | Freely, read-only | `scripts/diagnose.sh`, `docker service ls/ps/logs`, `free`, `df`, `git log` on the server, CI status and build logs |
 | **2 · Change via GitOps** | Default for any change | Edit in the repo → commit → human pushes/merges → apply through the deploy queue or the CI job |
@@ -78,7 +78,7 @@ Commands per level, traps and the break-glass checklist:
 ## 5. Map
 
 | Topic | Reference |
-|---|---|
+| --- | --- |
 | Reference platform, stacks, isolation model, source of truth | `references/architecture.md` |
 | Commands per level, traps, break-glass checklist | `references/access-and-guardrails.md` |
 | Deploy queue, stack vs app deploys, config layering, image pinning | `references/deploy-queue.md` |

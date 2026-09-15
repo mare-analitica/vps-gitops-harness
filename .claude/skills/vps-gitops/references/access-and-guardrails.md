@@ -49,7 +49,7 @@ CI: build status and logs through the CI helper script (read-only commands).
 ### Looks read-only, but is not
 
 | Command | Why it is not level 1 |
-|---|---|
+| --- | --- |
 | `docker exec -it <container> sh` | Interactive shell inside production |
 | `env` / `printenv` inside a container | Prints secrets that were loaded into the process |
 | `cat` of any file under the secrets directory | Prints secret values |
@@ -108,7 +108,7 @@ kill <pid>
 ## Forbidden without an explicit, specific request
 
 | Action | Why |
-|---|---|
+| --- | --- |
 | `docker volume rm`, `docker system prune -a --volumes` | Deletes customer data |
 | `docker secret rm` | Services mounting it stop starting; the value cannot be recovered from Swarm |
 | `docker stack rm` | Takes everything down; recreated networks/volumes may differ |
