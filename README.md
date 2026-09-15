@@ -7,9 +7,8 @@ GitOps platform harness for a single VPS running Docker Swarm, with an AI
 operations skill that lets an agent observe, diagnose and change production
 **through Git and a deploy queue — never as a loose root shell**.
 
-> **Status:** early. Milestone
-> [v0.1.0 — Skill foundation](https://github.com/mare-analitica/vps-gitops-harness/milestone/1)
-> delivers the AI skill and the repository foundation. Platform components
+> **Status:** [v0.1.0](https://github.com/mare-analitica/vps-gitops-harness/releases/tag/v0.1.0)
+> ships the AI skill and the repository foundation. Platform components
 > (deploy queue, stack templates, host roles) follow in later milestones.
 
 ## Why
