@@ -18,4 +18,5 @@ can revoke. This harness packages a predictable way to operate that setup.
 
 ## License
 
-[Apache-2.0](LICENSE)
+Copyright 2026 Paulo. Licensed under the [Apache License 2.0](LICENSE);
+see [NOTICE](NOTICE).
