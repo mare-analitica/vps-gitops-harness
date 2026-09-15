@@ -1,0 +1,37 @@
+# --- Secrets: never commit, even as examples with real values -------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+*.tfvars
+*.tfstate
+*.tfstate.*
+backend.tf
+secrets/
+credentials
+vault-init*.json
+
+# --- Local infrastructure inventories (host-specific) ----------------------
+inventory/hosts.yml
+group_vars/all.yml
+host_vars/
+
+# --- Tooling ---------------------------------------------------------------
+node_modules/
+.venv/
+__pycache__/
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# --- Local agent state -----------------------------------------------------
+.claude/settings.local.json
+.planning/
