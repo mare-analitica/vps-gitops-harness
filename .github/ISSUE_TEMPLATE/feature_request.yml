@@ -1,0 +1,36 @@
+name: Feature or content request
+description: New skill content, a troubleshooting entry, a script or an improvement
+title: "feat: "
+labels: ["type: feature"]
+body:
+  - type: checkboxes
+    id: sanitization
+    attributes:
+      label: Sanitization
+      options:
+        - label: I removed real hostnames, domains, IP addresses, customer names, credentials and tokens from everything below.
+          required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What operational problem does this solve? A real incident is the best motivation.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: What should change, and at which access level (local, observe, GitOps, break-glass) it applies.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      placeholder: |
+        - [ ] ...
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered

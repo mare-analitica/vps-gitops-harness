@@ -13,6 +13,8 @@
   },
   "ignores": [
     "node_modules/**",
-    "LICENSE"
+    "LICENSE",
+    // GitHub renders the PR template inside the PR body: no top-level heading.
+    ".github/pull_request_template.md"
   ]
 }
