@@ -1,0 +1,53 @@
+name: Bug report
+description: Something in a script, skill reference or CI does not work as documented
+title: "fix: "
+labels: ["type: bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. **Security issues must not be reported here** — use a private security advisory (see SECURITY.md).
+  - type: checkboxes
+    id: sanitization
+    attributes:
+      label: Sanitization
+      options:
+        - label: I removed real hostnames, domains, IP addresses, customer names, credentials and tokens from everything below.
+          required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Skill (SKILL.md or references)
+        - Scripts
+        - CI / repository
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: Exact error text helps searching. Redact values.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. ...
+        2. ...
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Docker/Swarm version, relevant tool versions.
